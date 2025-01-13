@@ -1,3 +1,6 @@
+# direnv
+.env*
+
 # Logs
 logs
 *.log
@@ -22,3 +25,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Amplify
+.amplify
+amplify_outputs.json
