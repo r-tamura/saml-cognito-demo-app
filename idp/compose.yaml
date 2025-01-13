@@ -1,0 +1,21 @@
+version: "3"
+services:
+  idp:
+    image: "quay.io/keycloak/keycloak"
+    ports:
+      - "8080:8080"
+    volumes:
+      # for persisting idp configuration
+      # ref: https://stackoverflow.com/questions/69812281/how-to-save-the-keycloak-data-when-running-inside-docker-container
+      - "idp_data:/opt/keycloak/data"
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: "admin"
+      KC_BOOTSTRAP_ADMIN_PASSWORD: "admin"
+      # Note: Keycloak default timezone is UTC
+      # If this we do not set timezone, Amazon Cognito treat SAML Response Assertion as expired
+      # ref: https://gist.github.com/wk-j/fc35c6e4a9a331082dd3c5776764c770
+      TZ: "Asia/Tokyo"
+    command: ["start-dev"]
+
+volumes:
+  idp_data:

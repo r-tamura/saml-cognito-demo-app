@@ -29,3 +29,6 @@ dist-ssr
 # Amplify
 .amplify
 amplify_outputs.json
+
+# SAML IDPのメタデータ
+saml-idp-metadata.xml
