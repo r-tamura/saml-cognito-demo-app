@@ -30,5 +30,8 @@ dist-ssr
 .amplify
 amplify_outputs.json
 
+# React Router
+.react-router/
+
 # SAML IDPのメタデータ
 saml-idp-metadata.xml

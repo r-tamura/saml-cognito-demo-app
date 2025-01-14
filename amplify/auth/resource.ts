@@ -46,7 +46,7 @@ export const auth = defineAuth({
       // 例: 46c5da8fd11c53d8919f.auth.ap-northeast-1.amazoncognito.com
       saml: defineSamlProviderIfSamlIdpMetadataExists(),
       callbackUrls: ["http://localhost:5173/signin-with-redirect/post-signin"],
-      logoutUrls: ["http://localhost:5173/"],
+      logoutUrls: ["http://localhost:5173/signin-with-redirect/post-signout"],
     },
   },
   userAttributes: {

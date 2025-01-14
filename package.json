@@ -4,19 +4,27 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "cross-env NODE_ENV=production react-router build",
+    "dev": "react-router dev",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@react-router/fs-routes": "^7.1.1",
+    "@react-router/node": "^7.1.1",
+    "@react-router/serve": "^7.1.1",
+    "aws-amplify": "^6.12.0",
+    "isbot": "^5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.1"
   },
   "devDependencies": {
     "@aws-amplify/backend": "^1.13.0",
     "@aws-amplify/backend-cli": "^1.4.6",
     "@eslint/js": "^9.18.0",
+    "@react-router/dev": "^7.1.1",
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
